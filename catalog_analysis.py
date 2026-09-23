@@ -66,9 +66,31 @@ def decade_label(year):
         case _:
             return "старые"
 
-if __name__ == "__main__":
-    for rating in [4.9, 5.0, 6.9, 7.0, 8.9, 9.0]:
-        print(rating, rating_tier(rating))
+def print_non_comedy_movies(movies):
+    for movie in movies:
+        if "comedy" in movie["genres"]:
+            continue
+        else:
+            print(movie["title"])
 
-    for year in [2014, 2015, 2020, 2021]:
-        print(year, decade_label(year))
+def print_first_masterpiece(movies):
+    i = 0
+    while i < len(movies):
+        if movies[i]['rating'] > 9.0:
+            print(movies[i]['title'])
+            break
+        else:
+            i += 1
+    else:
+        print("Шедевров не найдено")
+
+def count_long_movies(movies, threshold=120):
+    count = 0
+    for movie in movies:
+        if movie['duration_min'] > threshold:
+            count += 1
+    return count
+
+if __name__ == "__main__":
+    print(count_long_movies(movies))
+    print(count_long_movies(movies, 150))
