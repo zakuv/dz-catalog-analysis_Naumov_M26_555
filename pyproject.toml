@@ -4,17 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "Debil", email = "mi-n@list.ru" }
+    { name = "Mihail Naumov", email = "mi-n@list.ru" }
 ]
 requires-python = ">=3.12"
 dependencies = []
-
-[project.scripts]
-dz-catalog-analysis-naumov-m26-555 = "dz_catalog_analysis_naumov_m26_555:main"
-
-[build-system]
-requires = ["uv_build>=0.12.18,<0.13.0"]
-build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
